@@ -42,8 +42,6 @@ var NgAppGenerator = yeoman.generators.Base.extend({
     app: function() {
         this.mkdir('app');
         this.mkdir('app/common');
-        this.mkdir('tasks');
-        this.mkdir('tasks/options');
 
         this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
@@ -52,6 +50,13 @@ var NgAppGenerator = yeoman.generators.Base.extend({
     projectfiles: function() {
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
+        this.copy('gitignore', '.gitignore');
+    },
+
+    grunt: function() {
+        this.copy('Gruntfile.js', 'Gruntfile.js');
+        this.mkdir('tasks');
+        this.directory('tasks', 'tasks');
     }
 });
 
