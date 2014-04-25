@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
-    var config = _.assign({
+    var config = _.extend({
         pkg: require('./package')
     }, loadConfig('./tasks/options/'));
 
