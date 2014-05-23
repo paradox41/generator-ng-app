@@ -48,7 +48,7 @@ var NgAppGenerator = yeoman.generators.Base.extend({
         this.copy('_bower.json', 'bower.json');
         this.copy('_config.js', 'app/config.js');
 
-        this.copy('scss/app.scss', 'app/app.scss');
+        this.copy('stylesheets/app.scss', 'app/app.scss');
     },
 
     projectfiles: function() {
