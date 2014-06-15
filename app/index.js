@@ -19,21 +19,22 @@ var NgAppGenerator = yeoman.generators.Base.extend({
     askFor: function() {
         var done = this.async();
 
-        // have Yeoman greet the user
         this.log(this.yeoman);
-
-        // replace it with a short and sweet description of your generator
-        this.log(chalk.magenta('You\'re using the fantastic NgApp generator.'));
+        this.log(chalk.magenta('NgApp generator'));
 
         var prompts = [{
+            type: 'input',
+            name: 'appName',
+            message: 'What is this application\'s name?'
+        }, {
             type: 'confirm',
-            name: 'someOption',
-            message: 'Would you like to enable this option?',
-            default: true
+            name: 'skip-install',
+            message: 'Would you like to skip the installation of dependencies?',
+            default: false
         }];
 
         this.prompt(prompts, function(props) {
-            this.someOption = props.someOption;
+            this.appName = props.appName;
 
             done();
         }.bind(this));
